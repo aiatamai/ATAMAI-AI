@@ -754,7 +754,7 @@
 
 						<div
 							bind:this={contentContainerElement}
-							class="w-full flex flex-col relative {edit ? 'hidden' : ''}"
+							class="w-full flex flex-col relative {edit ? 'hidden' : ''} bg-gray-50/90 dark:bg-gray-850/70 backdrop-blur-md border border-gray-200 dark:border-gray-800/50 rounded-2xl p-4 shadow-sm"
 							id="response-content-container"
 						>
 							{#if message.content === '' && !message.error && ((model?.info?.meta?.capabilities?.status_updates ?? true) ? (message?.statusHistory ?? [...(message?.status ? [message?.status] : [])]).length === 0 || (message?.statusHistory?.at(-1)?.hidden ?? false) : true)}

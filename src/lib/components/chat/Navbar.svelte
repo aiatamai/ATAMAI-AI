@@ -75,7 +75,8 @@
 <nav
 	class="sticky top-0 z-30 w-full {chat?.id
 		? 'pt-0.5 pb-1'
-		: 'pt-1 pb-1'} -mb-12 flex flex-col items-center drag-region"
+		: 'pt-1 pb-1'} -mb-12 flex flex-col items-center drag-region border-b border-transparent"
+	style="border-image: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.3) 50%, transparent) 1;"
 >
 	<div class="flex items-center w-full pl-1.5 pr-1">
 		<div
@@ -93,7 +94,7 @@
 					>
 						<Tooltip content={$showSidebar ? $i18n.t('Close Sidebar') : $i18n.t('Open Sidebar')}>
 							<button
-								class=" cursor-pointer flex rounded-lg hover:bg-gray-100 dark:hover:bg-gray-850 transition"
+								class=" cursor-pointer flex rounded-lg hover:bg-accent-600/10 dark:hover:bg-accent-600/10 transition"
 								on:click={() => {
 									showSidebar.set(!$showSidebar);
 								}}
@@ -123,7 +124,7 @@
 						{#if !chat?.id}
 							<Tooltip content={$i18n.t(`Temporary Chat`)}>
 								<button
-									class="flex cursor-pointer px-2 py-2 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-850 transition"
+									class="flex cursor-pointer px-2 py-2 rounded-xl hover:bg-accent-600/10 dark:hover:bg-accent-600/10 transition"
 									id="temporary-chat-button"
 									on:click={async () => {
 										if (($settings?.temporaryChatByDefault ?? false) && $temporaryChatEnabled) {
@@ -133,7 +134,7 @@
 											await temporaryChatEnabled.set(!$temporaryChatEnabled);
 										}
 
-										await goto('/');
+										await goto('/app');
 
 										// add 'temporary-chat=true' to the URL
 										if ($temporaryChatEnabled) {

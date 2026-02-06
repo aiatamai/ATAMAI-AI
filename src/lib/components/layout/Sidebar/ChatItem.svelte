@@ -362,6 +362,9 @@
 				? 'cursor-not-allowed'
 				: ''}"
 		>
+			{#if id === $chatId}
+				<div class="absolute left-0 top-0 bottom-0 w-1 bg-accent-600 rounded-l-xl"></div>
+			{/if}
 			<input
 				id="chat-title-input-{id}"
 				bind:value={chatTitle}
@@ -394,7 +397,7 @@
 				? 'bg-gray-100 dark:bg-gray-900 selected'
 				: selected
 					? 'bg-gray-100 dark:bg-gray-950 selected'
-					: ' group-hover:bg-gray-100 dark:group-hover:bg-gray-950'}  whitespace-nowrap text-ellipsis"
+					: ' group-hover:bg-gray-100 dark:group-hover:bg-gray-950'}  whitespace-nowrap text-ellipsis relative"
 			href="/c/{id}"
 			on:click={() => {
 				dispatch('select');
@@ -423,6 +426,9 @@
 			on:focus={(e) => {}}
 			draggable="false"
 		>
+			{#if id === $chatId}
+				<div class="absolute left-0 top-0 bottom-0 w-1 bg-accent-600 rounded-l-xl"></div>
+			{/if}
 			<div class=" flex self-center flex-1 w-full">
 				<div dir="auto" class=" text-left self-center overflow-hidden w-full h-[20px] truncate">
 					{title}

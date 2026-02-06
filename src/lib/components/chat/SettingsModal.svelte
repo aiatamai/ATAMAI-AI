@@ -581,7 +581,7 @@
 </script>
 
 <Modal size="2xl" bind:show>
-	<div class="text-gray-700 dark:text-gray-100 mx-1">
+	<div class="text-gray-700 dark:text-gray-100 mx-1 bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg border border-gray-200 dark:border-gray-800 rounded-2xl">
 		<div class=" flex justify-between dark:text-gray-300 px-4 md:px-4.5 pt-4.5 pb-0.5 md:pb-2.5">
 			<div class=" text-lg font-medium self-center">{$i18n.t('Settings')}</div>
 			<button
@@ -628,15 +628,13 @@
 								role="tab"
 								aria-controls="tab-general"
 								aria-selected={selectedTab === 'general'}
-								class={`px-0.5 md:px-2.5 py-1 min-w-fit rounded-xl flex-1 md:flex-none flex text-left transition
+								class={`px-0.5 md:px-2.5 py-1 min-w-fit rounded-xl flex-1 md:flex-none flex text-left transition border-b-2
 								${
 									selectedTab === 'general'
-										? ($settings?.highContrastMode ?? false)
-											? 'dark:bg-gray-800 bg-gray-200'
-											: ''
+										? 'border-accent-600 text-accent-600'
 										: ($settings?.highContrastMode ?? false)
-											? 'hover:bg-gray-200 dark:hover:bg-gray-800'
-											: 'text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'
+											? 'hover:bg-gray-200 dark:hover:bg-gray-800 border-transparent'
+											: 'text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white border-transparent'
 								}`}
 								on:click={() => {
 									selectedTab = 'general';
@@ -652,15 +650,13 @@
 								role="tab"
 								aria-controls="tab-interface"
 								aria-selected={selectedTab === 'interface'}
-								class={`px-0.5 md:px-2.5 py-1 min-w-fit rounded-xl flex-1 md:flex-none flex text-left transition
+								class={`px-0.5 md:px-2.5 py-1 min-w-fit rounded-xl flex-1 md:flex-none flex text-left transition border-b-2
 								${
 									selectedTab === 'interface'
-										? ($settings?.highContrastMode ?? false)
-											? 'dark:bg-gray-800 bg-gray-200'
-											: ''
+										? 'border-accent-600 text-accent-600'
 										: ($settings?.highContrastMode ?? false)
-											? 'hover:bg-gray-200 dark:hover:bg-gray-800'
-											: 'text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'
+											? 'hover:bg-gray-200 dark:hover:bg-gray-800 border-transparent'
+											: 'text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white border-transparent'
 								}`}
 								on:click={() => {
 									selectedTab = 'interface';
@@ -677,15 +673,13 @@
 									role="tab"
 									aria-controls="tab-connections"
 									aria-selected={selectedTab === 'connections'}
-									class={`px-0.5 md:px-2.5 py-1 min-w-fit rounded-xl flex-1 md:flex-none flex text-left transition
+									class={`px-0.5 md:px-2.5 py-1 min-w-fit rounded-xl flex-1 md:flex-none flex text-left transition border-b-2
 								${
 									selectedTab === 'connections'
-										? ($settings?.highContrastMode ?? false)
-											? 'dark:bg-gray-800 bg-gray-200'
-											: ''
+										? 'border-accent-600 text-accent-600'
 										: ($settings?.highContrastMode ?? false)
-											? 'hover:bg-gray-200 dark:hover:bg-gray-800'
-											: 'text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'
+											? 'hover:bg-gray-200 dark:hover:bg-gray-800 border-transparent'
+											: 'text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white border-transparent'
 								}`}
 									on:click={() => {
 										selectedTab = 'connections';
@@ -703,15 +697,13 @@
 									role="tab"
 									aria-controls="tab-tools"
 									aria-selected={selectedTab === 'tools'}
-									class={`px-0.5 md:px-2.5 py-1 min-w-fit rounded-xl flex-1 md:flex-none flex text-left transition
+									class={`px-0.5 md:px-2.5 py-1 min-w-fit rounded-xl flex-1 md:flex-none flex text-left transition border-b-2
 								${
 									selectedTab === 'tools'
-										? ($settings?.highContrastMode ?? false)
-											? 'dark:bg-gray-800 bg-gray-200'
-											: ''
+										? 'border-accent-600 text-accent-600'
 										: ($settings?.highContrastMode ?? false)
-											? 'hover:bg-gray-200 dark:hover:bg-gray-800'
-											: 'text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'
+											? 'hover:bg-gray-200 dark:hover:bg-gray-800 border-transparent'
+											: 'text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white border-transparent'
 								}`}
 									on:click={() => {
 										selectedTab = 'tools';
@@ -728,15 +720,13 @@
 								role="tab"
 								aria-controls="tab-personalization"
 								aria-selected={selectedTab === 'personalization'}
-								class={`px-0.5 md:px-2.5 py-1 min-w-fit rounded-xl flex-1 md:flex-none flex text-left transition
+								class={`px-0.5 md:px-2.5 py-1 min-w-fit rounded-xl flex-1 md:flex-none flex text-left transition border-b-2
 								${
 									selectedTab === 'personalization'
-										? ($settings?.highContrastMode ?? false)
-											? 'dark:bg-gray-800 bg-gray-200'
-											: ''
+										? 'border-accent-600 text-accent-600'
 										: ($settings?.highContrastMode ?? false)
-											? 'hover:bg-gray-200 dark:hover:bg-gray-800'
-											: 'text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'
+											? 'hover:bg-gray-200 dark:hover:bg-gray-800 border-transparent'
+											: 'text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white border-transparent'
 								}`}
 								on:click={() => {
 									selectedTab = 'personalization';
@@ -752,15 +742,13 @@
 								role="tab"
 								aria-controls="tab-audio"
 								aria-selected={selectedTab === 'audio'}
-								class={`px-0.5 md:px-2.5 py-1 min-w-fit rounded-xl flex-1 md:flex-none flex text-left transition
+								class={`px-0.5 md:px-2.5 py-1 min-w-fit rounded-xl flex-1 md:flex-none flex text-left transition border-b-2
 								${
 									selectedTab === 'audio'
-										? ($settings?.highContrastMode ?? false)
-											? 'dark:bg-gray-800 bg-gray-200'
-											: ''
+										? 'border-accent-600 text-accent-600'
 										: ($settings?.highContrastMode ?? false)
-											? 'hover:bg-gray-200 dark:hover:bg-gray-800'
-											: 'text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'
+											? 'hover:bg-gray-200 dark:hover:bg-gray-800 border-transparent'
+											: 'text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white border-transparent'
 								}`}
 								on:click={() => {
 									selectedTab = 'audio';
@@ -776,15 +764,13 @@
 								role="tab"
 								aria-controls="tab-data-controls"
 								aria-selected={selectedTab === 'data_controls'}
-								class={`px-0.5 md:px-2.5 py-1 min-w-fit rounded-xl flex-1 md:flex-none flex text-left transition
+								class={`px-0.5 md:px-2.5 py-1 min-w-fit rounded-xl flex-1 md:flex-none flex text-left transition border-b-2
 								${
 									selectedTab === 'data_controls'
-										? ($settings?.highContrastMode ?? false)
-											? 'dark:bg-gray-800 bg-gray-200'
-											: ''
+										? 'border-accent-600 text-accent-600'
 										: ($settings?.highContrastMode ?? false)
-											? 'hover:bg-gray-200 dark:hover:bg-gray-800'
-											: 'text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'
+											? 'hover:bg-gray-200 dark:hover:bg-gray-800 border-transparent'
+											: 'text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white border-transparent'
 								}`}
 								on:click={() => {
 									selectedTab = 'data_controls';
@@ -800,15 +786,13 @@
 								role="tab"
 								aria-controls="tab-account"
 								aria-selected={selectedTab === 'account'}
-								class={`px-0.5 md:px-2.5 py-1 min-w-fit rounded-xl flex-1 md:flex-none flex text-left transition
+								class={`px-0.5 md:px-2.5 py-1 min-w-fit rounded-xl flex-1 md:flex-none flex text-left transition border-b-2
 								${
 									selectedTab === 'account'
-										? ($settings?.highContrastMode ?? false)
-											? 'dark:bg-gray-800 bg-gray-200'
-											: ''
+										? 'border-accent-600 text-accent-600'
 										: ($settings?.highContrastMode ?? false)
-											? 'hover:bg-gray-200 dark:hover:bg-gray-800'
-											: 'text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'
+											? 'hover:bg-gray-200 dark:hover:bg-gray-800 border-transparent'
+											: 'text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white border-transparent'
 								}`}
 								on:click={() => {
 									selectedTab = 'account';
@@ -824,15 +808,13 @@
 								role="tab"
 								aria-controls="tab-about"
 								aria-selected={selectedTab === 'about'}
-								class={`px-0.5 md:px-2.5 py-1 min-w-fit rounded-xl flex-1 md:flex-none flex text-left transition
+								class={`px-0.5 md:px-2.5 py-1 min-w-fit rounded-xl flex-1 md:flex-none flex text-left transition border-b-2
 								${
 									selectedTab === 'about'
-										? ($settings?.highContrastMode ?? false)
-											? 'dark:bg-gray-800 bg-gray-200'
-											: ''
+										? 'border-accent-600 text-accent-600'
 										: ($settings?.highContrastMode ?? false)
-											? 'hover:bg-gray-200 dark:hover:bg-gray-800'
-											: 'text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'
+											? 'hover:bg-gray-200 dark:hover:bg-gray-800 border-transparent'
+											: 'text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white border-transparent'
 								}`}
 								on:click={() => {
 									selectedTab = 'about';

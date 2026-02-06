@@ -1117,8 +1117,8 @@
 						<div
 							id="message-input-container"
 							class="flex-1 flex flex-col relative w-full shadow-lg rounded-3xl border {$temporaryChatEnabled
-								? 'border-dashed border-gray-100 dark:border-gray-800 hover:border-gray-200 focus-within:border-gray-200 hover:dark:border-gray-700 focus-within:dark:border-gray-700'
-								: ' border-gray-100/30 dark:border-gray-850/30 hover:border-gray-200 focus-within:border-gray-100 hover:dark:border-gray-800 focus-within:dark:border-gray-800'}  transition px-1 bg-white/5 dark:bg-gray-500/5 backdrop-blur-sm dark:text-gray-100"
+								? 'border-dashed border-gray-100 dark:border-gray-800 hover:border-gray-200 focus-within:border-accent-600 focus-within:shadow-glow hover:dark:border-gray-700 focus-within:dark:border-accent-600'
+								: ' border-gray-100/30 dark:border-gray-850/30 hover:border-gray-200 focus-within:border-accent-600 focus-within:shadow-glow hover:dark:border-gray-800 focus-within:dark:border-accent-600'}  transition px-1 bg-white/5 dark:bg-gray-500/5 backdrop-blur-md dark:text-gray-100"
 							dir={$settings?.chatDirection ?? 'auto'}
 						>
 							{#if atSelectedModel !== undefined}
@@ -1847,7 +1847,7 @@
 													<button
 														id="send-message-button"
 														class="{!(prompt === '' && files.length === 0)
-															? 'bg-black text-white hover:bg-gray-900 dark:bg-white dark:text-black dark:hover:bg-gray-100 '
+															? 'bg-gradient-to-r from-accent-600 to-pink-600 text-white hover:opacity-90'
 															: 'text-white bg-gray-200 dark:text-gray-900 dark:bg-gray-700 disabled'} transition rounded-full p-1.5 self-center"
 														type="submit"
 														disabled={prompt === '' && files.length === 0}

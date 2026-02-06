@@ -394,11 +394,14 @@
 				);
 			}}
 		>
-			{#if selectedModel}
-				{selectedModel.label}
-			{:else}
-				{placeholder}
-			{/if}
+			<div class="flex items-center gap-2">
+				{#if selectedModel}
+					<div class="w-2 h-2 rounded-full bg-accent-600 flex-shrink-0"></div>
+					{selectedModel.label}
+				{:else}
+					{placeholder}
+				{/if}
+			</div>
 			<ChevronDown className=" self-center ml-2 size-3" strokeWidth="2.5" />
 		</div>
 	</DropdownMenu.Trigger>

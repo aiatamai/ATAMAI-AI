@@ -901,3 +901,22 @@ body {
 		animation: fadeIn 0.6s ease-out, float 6s ease-in-out infinite 0.6s;
 	}
 }
+
+/* ============================================================================
+   Atamai AI Button Utility Classes
+   ============================================================================ */
+
+/* Primary button - Gradient background for main CTAs */
+.btn-primary {
+	@apply bg-gradient-to-r from-accent-600 to-pink-600 text-white px-4 py-2 rounded-lg hover:opacity-90 transition;
+}
+
+/* Secondary button - Outlined with accent color */
+.btn-secondary {
+	@apply border border-accent-600 text-accent-600 dark:text-accent-400 px-4 py-2 rounded-lg hover:bg-accent-600/10 transition;
+}
+
+/* Ghost button - Transparent with subtle accent hover */
+.btn-ghost {
+	@apply text-gray-700 dark:text-gray-300 px-4 py-2 rounded-lg hover:bg-accent-600/10 transition;
+}
