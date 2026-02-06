@@ -209,7 +209,11 @@
 />
 
 <div class="w-full h-screen max-h-[100dvh] text-white relative" id="auth-page">
-	<div class="w-full h-full absolute top-0 left-0 bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200 dark:from-gray-950 dark:via-gray-900 dark:to-gray-850"></div>
+	<!-- Custom Atamai AI background -->
+	<div class="w-full h-full absolute top-0 left-0">
+		<div class="w-full h-full absolute inset-0 dark:hidden" style="background-image: url('/assets/images/atamai-bg-light.svg'); background-size: cover; background-position: center;"></div>
+		<div class="w-full h-full absolute inset-0 hidden dark:block" style="background-image: url('/assets/images/atamai-bg.svg'); background-size: cover; background-position: center;"></div>
+	</div>
 
 	<div class="w-full absolute top-0 left-0 right-0 h-8 drag-region" />
 
@@ -235,16 +239,24 @@
 					</div>
 				{:else}
 					<div class="my-auto flex flex-col justify-center items-center">
-						<div class="sm:max-w-md my-auto pb-10 w-full dark:text-gray-100 bg-white/70 dark:bg-gray-900/70 backdrop-blur-xl rounded-3xl p-8 shadow-2xl dark:shadow-glow border border-gray-200/50 dark:border-gray-700/50">
+						<div class="sm:max-w-md my-auto pb-10 w-full dark:text-gray-100 bg-white/80 dark:bg-gray-900/80 backdrop-blur-2xl rounded-3xl p-10 shadow-2xl dark:shadow-glow-lg border border-gray-300/30 dark:border-accent-600/20 relative overflow-hidden">
+							<!-- Subtle accent glow behind card -->
+							<div class="absolute -top-40 -right-40 w-80 h-80 bg-accent-600/10 dark:bg-accent-600/5 rounded-full blur-3xl pointer-events-none"></div>
+							<div class="absolute -bottom-40 -left-40 w-80 h-80 bg-accent-700/10 dark:bg-accent-700/5 rounded-full blur-3xl pointer-events-none"></div>
+
+							<!-- Content wrapper with relative positioning --><div class="relative z-10">
 							{#if $config?.metadata?.auth_logo_position === 'center'}
-								<div class="flex justify-center mb-6">
+								<div class="flex flex-col items-center justify-center mb-8">
 									<img
 										id="logo"
 										crossorigin="anonymous"
-										src="{WEBUI_BASE_URL}/static/favicon.png"
-										class="size-24 rounded-full"
-										alt=""
+										src="{WEBUI_BASE_URL}/static/logo.png"
+										class="size-20 rounded-2xl shadow-xl mb-4"
+										alt="Atamai AI"
 									/>
+									<h1 class="text-2xl font-bold bg-gradient-to-r from-accent-600 to-accent-800 dark:from-accent-400 dark:to-accent-600 bg-clip-text text-transparent">
+										Atamai AI
+									</h1>
 								</div>
 							{/if}
 							<form
@@ -567,7 +579,8 @@
 									</button>
 								</div>
 							{/if}
-						</div>
+						</div><!-- End content wrapper -->
+						</div><!-- End card -->
 						{#if $config?.metadata?.login_footer}
 							<div class="max-w-3xl mx-auto">
 								<div class="mt-2 text-[0.7rem] text-gray-500 dark:text-gray-400 marked">
@@ -582,15 +595,20 @@
 
 		{#if !$config?.metadata?.auth_logo_position}
 			<div class="fixed m-10 z-50">
-				<div class="flex space-x-2">
-					<div class=" self-center">
+				<div class="flex items-center space-x-3">
+					<div class="self-center">
 						<img
 							id="logo"
 							crossorigin="anonymous"
-							src="{WEBUI_BASE_URL}/static/favicon.png"
-							class=" w-6 rounded-full"
-							alt=""
+							src="{WEBUI_BASE_URL}/static/logo.png"
+							class="w-10 h-10 rounded-lg shadow-lg"
+							alt="Atamai AI"
 						/>
+					</div>
+					<div class="self-center">
+						<h1 class="text-xl font-semibold bg-gradient-to-r from-accent-600 to-accent-800 dark:from-accent-400 dark:to-accent-600 bg-clip-text text-transparent">
+							Atamai AI
+						</h1>
 					</div>
 				</div>
 			</div>
