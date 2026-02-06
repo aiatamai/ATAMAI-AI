@@ -5,7 +5,6 @@
 	import { WEBUI_BASE_URL } from '$lib/constants';
 
 	import Marquee from './common/Marquee.svelte';
-	import SlideShow from './common/SlideShow.svelte';
 	import ArrowRightCircle from './icons/ArrowRightCircle.svelte';
 
 	export let show = true;
@@ -40,6 +39,12 @@
 
 {#if show}
 	<div class="w-full h-screen max-h-[100dvh] text-white relative">
+		<!-- Custom Atamai AI background -->
+		<div class="w-full h-full absolute inset-0">
+			<div class="w-full h-full absolute inset-0 dark:hidden" style="background-image: url('/assets/images/atamai-bg-light.svg'); background-size: cover; background-position: center;"></div>
+			<div class="w-full h-full absolute inset-0 hidden dark:block" style="background-image: url('/assets/images/atamai-bg.svg'); background-size: cover; background-position: center;"></div>
+		</div>
+
 		<div class="fixed m-10 z-50">
 			<div class="flex space-x-2">
 				<div class=" self-center">
@@ -54,8 +59,6 @@
 			</div>
 		</div>
 
-		<SlideShow duration={5000} />
-
 		<div
 			class="w-full h-full absolute top-0 left-0 bg-linear-to-t from-20% from-black to-transparent"
 		></div>
@@ -68,16 +71,16 @@
 					<Marquee
 						duration={5000}
 						words={[
-							$i18n.t('Explore the cosmos'),
-							$i18n.t('Unlock mysteries'),
-							$i18n.t('Chart new frontiers'),
-							$i18n.t('Dive into knowledge'),
-							$i18n.t('Discover wonders'),
-							$i18n.t('Ignite curiosity'),
-							$i18n.t('Forge new paths'),
-							$i18n.t('Unravel secrets'),
-							$i18n.t('Pioneer insights'),
-							$i18n.t('Embark on adventures')
+							$i18n.t('Your AI Assistant'),
+							$i18n.t('Powered by Intelligence'),
+							$i18n.t('Transform Your Work'),
+							$i18n.t('Unlock Productivity'),
+							$i18n.t('Smart Conversations'),
+							$i18n.t('Intelligent Insights'),
+							$i18n.t('AI-Powered Solutions'),
+							$i18n.t('Work Smarter'),
+							$i18n.t('Enhanced Efficiency'),
+							$i18n.t('Next-Gen AI')
 						]}
 					/>
 
