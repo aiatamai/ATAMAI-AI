@@ -33,6 +33,59 @@
 /* --app-text-scale is updated via the UI Scale slider (Interface.svelte) */
 :root {
 	--app-text-scale: 1;
+
+	/* Atamai AI Brand Colors */
+	--atamai-accent: #7c3aed;
+	--atamai-accent-light: #a78bfa;
+	--atamai-accent-dark: #6d28d9;
+	--atamai-gradient-start: #7c3aed;
+	--atamai-gradient-end: #db2777;
+
+	/* Blue-tinted Neutral Grays (Light Mode) */
+	--color-gray-50: #f8f8fc;
+	--color-gray-100: #ebebf0;
+	--color-gray-200: #dddde5;
+	--color-gray-300: #c4c4d0;
+	--color-gray-400: #9898aa;
+	--color-gray-500: #7a7a8e;
+	--color-gray-600: #606078;
+	--color-gray-700: #3a3a4e;
+	--color-gray-800: #1e1e2e;
+	--color-gray-850: #16161f;
+	--color-gray-900: #111118;
+	--color-gray-950: #0a0a0f;
+
+	/* Accent Color Scale */
+	--color-accent-50: #f5f3ff;
+	--color-accent-100: #ede9fe;
+	--color-accent-200: #ddd6fe;
+	--color-accent-300: #c4b5fd;
+	--color-accent-400: #a78bfa;
+	--color-accent-500: #8b5cf6;
+	--color-accent-600: #7c3aed;
+	--color-accent-700: #6d28d9;
+	--color-accent-800: #5b21b6;
+	--color-accent-900: #4c1d95;
+	--color-accent-950: #2e1065;
+
+	/* Glass Effect Variables */
+	--glass-bg: rgba(255, 255, 255, 0.7);
+	--glass-border: rgba(255, 255, 255, 0.2);
+	--glass-blur: 12px;
+}
+
+/* Dark Mode Variable Overrides */
+.dark {
+	--glass-bg: rgba(22, 22, 31, 0.7);
+	--glass-border: rgba(255, 255, 255, 0.08);
+}
+
+/* OLED Dark Mode Variable Overrides */
+.oled-dark {
+	--color-gray-800: #0a0a0f;
+	--color-gray-850: #050508;
+	--color-gray-900: #000000;
+	--color-gray-950: #000000;
 }
 
 html {
