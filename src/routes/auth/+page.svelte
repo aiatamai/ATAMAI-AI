@@ -142,33 +142,11 @@
 
 	let onboarding = false;
 
-	async function setLogoImage() {
-		await tick();
-		const logo = document.getElementById('logo');
-
-		if (logo) {
-			const isDarkMode = document.documentElement.classList.contains('dark');
-
-			if (isDarkMode) {
-				const darkImage = new Image();
-				darkImage.src = `${WEBUI_BASE_URL}/static/favicon-dark.png`;
-
-				darkImage.onload = () => {
-					logo.src = `${WEBUI_BASE_URL}/static/favicon-dark.png`;
-					logo.style.filter = ''; // Ensure no inversion is applied if favicon-dark.png exists
-				};
-
-				darkImage.onerror = () => {
-					logo.style.filter = 'invert(1)'; // Invert image if favicon-dark.png is missing
-				};
-			}
-		}
-	}
 
 	onMount(async () => {
 		const redirectPath = $page.url.searchParams.get('redirect');
 		if ($user !== undefined) {
-			goto(redirectPath || '/');
+			goto(redirectPath || '/app');
 		} else {
 			if (redirectPath) {
 				localStorage.setItem('redirectPath', redirectPath);
@@ -184,11 +162,11 @@
 		form = $page.url.searchParams.get('form');
 
 		loaded = true;
-		setLogoImage();
 
 		if (($config?.features.auth_trusted_header ?? false) || $config?.features.auth === false) {
 			await signInHandler();
 		} else {
+			// Show onboarding if enabled in config (for first-time setup)
 			onboarding = $config?.onboarding ?? false;
 		}
 	});
@@ -244,17 +222,11 @@
 							<div class="absolute -top-40 -right-40 w-80 h-80 bg-accent-600/10 dark:bg-accent-600/5 rounded-full blur-3xl pointer-events-none"></div>
 							<div class="absolute -bottom-40 -left-40 w-80 h-80 bg-accent-700/10 dark:bg-accent-700/5 rounded-full blur-3xl pointer-events-none"></div>
 
-							<!-- Content wrapper with relative positioning --><div class="relative z-10">
+							<!-- Content wrapper with relative positioning -->
+							<div class="relative z-10">
 							{#if $config?.metadata?.auth_logo_position === 'center'}
 								<div class="flex flex-col items-center justify-center mb-8">
-									<img
-										id="logo"
-										crossorigin="anonymous"
-										src="{WEBUI_BASE_URL}/static/logo.png"
-										class="size-20 rounded-2xl shadow-xl mb-4"
-										alt="Atamai AI"
-									/>
-									<h1 class="text-2xl font-bold bg-gradient-to-r from-accent-600 to-accent-800 dark:from-accent-400 dark:to-accent-600 bg-clip-text text-transparent">
+									<h1 class="text-2xl font-bold bg-gradient-to-r from-accent-400 to-pink-600 bg-clip-text text-transparent">
 										Atamai AI
 									</h1>
 								</div>
@@ -595,21 +567,8 @@
 
 		{#if !$config?.metadata?.auth_logo_position}
 			<div class="fixed m-10 z-50">
-				<div class="flex items-center space-x-3">
-					<div class="self-center">
-						<img
-							id="logo"
-							crossorigin="anonymous"
-							src="{WEBUI_BASE_URL}/static/logo.png"
-							class="w-10 h-10 rounded-lg shadow-lg"
-							alt="Atamai AI"
-						/>
-					</div>
-					<div class="self-center">
-						<h1 class="text-xl font-semibold bg-gradient-to-r from-accent-600 to-accent-800 dark:from-accent-400 dark:to-accent-600 bg-clip-text text-transparent">
-							Atamai AI
-						</h1>
-					</div>
+				<div class="text-xl font-bold bg-gradient-to-r from-accent-400 to-pink-600 bg-clip-text text-transparent">
+					Atamai AI
 				</div>
 			</div>
 		{/if}
