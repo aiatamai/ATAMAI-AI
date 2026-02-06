@@ -1,6 +1,6 @@
 [project]
-name = "open-webui"
-description = "Open WebUI"
+name = "atamai-ai"
+description = "Atamai AI"
 authors = [
     { name = "Timothy Jaeryang Baek", email = "tim@openwebui.com" }
 ]
@@ -161,7 +161,7 @@ all = [
 ]
 
 [project.scripts]
-open-webui = "open_webui:app"
+atamai-ai = "atamai_ai:app"
 
 [build-system]
 requires = ["hatchling"]
@@ -193,7 +193,7 @@ exclude = [
     "webui.db",
     "chroma.sqlite3",
 ]
-force-include = { "CHANGELOG.md" = "open_webui/CHANGELOG.md", build = "open_webui/frontend" }
+force-include = { "CHANGELOG.md" = "atamai_ai/CHANGELOG.md", build = "atamai_ai/frontend" }
 
 [tool.codespell]
 # Ref: https://github.com/codespell-project/codespell#using-a-config-file

@@ -4,7 +4,7 @@
 	import { onMount, getContext } from 'svelte';
 	import { Confetti } from 'svelte-confetti';
 
-	import { WEBUI_NAME, config, settings } from '$lib/stores';
+	import { ATAMAI_NAME, config, settings } from '$lib/stores';
 
 	import { WEBUI_VERSION } from '$lib/constants';
 	import { getChangelog } from '$lib/apis';
@@ -40,7 +40,7 @@
 		<div class="flex justify-between items-start">
 			<div class="text-xl font-medium">
 				{$i18n.t("What's New in")}
-				{$WEBUI_NAME}
+				{$ATAMAI_NAME}
 				<Confetti x={[-1, -0.25]} y={[0, 0.5]} />
 			</div>
 			<button class="self-center" on:click={closeModal} aria-label={$i18n.t('Close')}>

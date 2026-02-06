@@ -25,7 +25,7 @@
 		isApp,
 		models,
 		selectedFolder,
-		WEBUI_NAME,
+		ATAMAI_NAME,
 		sidebarWidth
 	} from '$lib/stores';
 	import { onMount, getContext, tick, onDestroy } from 'svelte';
@@ -879,7 +879,7 @@
 						id="sidebar-webui-name"
 						class=" self-center font-medium text-gray-850 dark:text-white font-primary"
 					>
-						{$WEBUI_NAME}
+						{$ATAMAI_NAME}
 					</div>
 				</a>
 				<Tooltip
