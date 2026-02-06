@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <!-- OG Image for social media sharing -->
+  <defs>
+    <linearGradient id="ogBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0f"/>
+      <stop offset="100%" style="stop-color:#16161f"/>
+    </linearGradient>
+    <linearGradient id="ogLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7c3aed"/>
+      <stop offset="100%" style="stop-color:#a78bfa"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#ogBg)"/>
+
+  <!-- Subtle dot pattern -->
+  <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="1" fill="#7c3aed" opacity="0.1"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+
+  <!-- Logo (centered, scaled up) -->
+  <g transform="translate(500, 200)">
+    <!-- "A" shape -->
+    <path d="M 60 160 L 80 60 L 100 60 L 90 160 Z" fill="url(#ogLogoGrad)"/>
+    <path d="M 110 160 L 100 60 L 120 60 L 140 160 Z" fill="url(#ogLogoGrad)"/>
+    <rect x="75" y="100" width="50" height="12" rx="2" fill="url(#ogLogoGrad)" opacity="0.9"/>
+    <circle cx="100" cy="50" r="8" fill="#7c3aed"/>
+    <circle cx="90" cy="70" r="3" fill="#a78bfa" opacity="0.6"/>
+    <circle cx="110" cy="70" r="3" fill="#a78bfa" opacity="0.6"/>
+  </g>
+
+  <!-- Title -->
+  <text x="600" y="430" font-family="Inter, system-ui, sans-serif" font-size="72" font-weight="700" fill="#ffffff" text-anchor="middle">Atamai AI</text>
+
+  <!-- Tagline -->
+  <text x="600" y="490" font-family="Inter, system-ui, sans-serif" font-size="32" font-weight="400" fill="#9090a8" text-anchor="middle">Your AI Assistant</text>
+</svg>
