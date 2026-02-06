@@ -217,7 +217,7 @@
 			{/if}
 
 			{#if edit === true}
-				<div class=" w-full bg-gray-50 dark:bg-gray-800 rounded-3xl px-5 py-3 mb-2">
+				<div class="w-full bg-gray-100/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-3xl px-5 py-3 mb-2 border border-gray-200/30 dark:border-gray-700/30">
 					{#if (editedFiles ?? []).length > 0}
 						<div class="flex items-center flex-wrap gap-2 -mx-2 mb-1">
 							{#each editedFiles as file, fileIdx}
@@ -312,7 +312,7 @@
 						<div>
 							<button
 								id="save-edit-message-button"
-								class="px-3.5 py-1.5 bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 border border-gray-100 dark:border-gray-700 text-gray-700 dark:text-gray-200 transition rounded-3xl"
+								class="px-3.5 py-1.5 bg-gray-100/70 hover:bg-gray-200/70 dark:bg-gray-800/70 dark:hover:bg-gray-700/70 border border-gray-100 dark:border-gray-700 text-gray-700 dark:text-gray-200 transition rounded-3xl"
 								on:click={() => {
 									editMessageConfirmHandler(false);
 								}}
