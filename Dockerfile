@@ -36,9 +36,12 @@ WORKDIR /app
 RUN apk add --no-cache git
 
 COPY package.json package-lock.json ./
-RUN npm ci --force
+RUN npm install --force
 
 COPY . .
+
+# Install workspace dependencies
+RUN npm install --workspaces --force
 ENV APP_BUILD_HASH=${BUILD_HASH}
 RUN npm run build
 

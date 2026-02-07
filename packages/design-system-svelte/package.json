@@ -1,0 +1,16 @@
+{
+  "name": "@atamai-ai/design-system-svelte",
+  "version": "0.1.0",
+  "description": "Atamai AI Design System - Compiled Svelte components",
+  "type": "module",
+  "svelte": "./src/index.js",
+  "exports": {
+    ".": {
+      "svelte": "./src/index.js"
+    },
+    "./components/*": "./src/components/*"
+  },
+  "peerDependencies": {
+    "svelte": "^5.0.0"
+  }
+}

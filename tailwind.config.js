@@ -4,7 +4,10 @@ import containerQueries from '@tailwindcss/container-queries';
 /** @type {import('tailwindcss').Config} */
 export default {
 	darkMode: 'class',
-	content: ['./src/**/*.{html,js,svelte,ts}'],
+	content: [
+		'./src/**/*.{html,js,svelte,ts}',
+		'./packages/design-system-svelte/src/**/*.svelte'
+	],
 	theme: {
 		extend: {
 			colors: {
@@ -34,6 +37,28 @@ export default {
 					800: 'var(--color-accent-800, #5b21b6)',
 					900: 'var(--color-accent-900, #4c1d95)',
 					950: 'var(--color-accent-950, #2e1065)'
+				},
+				pink: {
+					600: '#db2777',
+					700: '#be185d'
+				},
+				green: {
+					100: '#dcfce7',
+					400: '#34d399',
+					700: '#15803d',
+					900: '#14532d'
+				},
+				amber: {
+					100: '#fef3c7',
+					400: '#fbbf24',
+					700: '#b45309',
+					900: '#78350f'
+				},
+				red: {
+					100: '#fee2e2',
+					400: '#f87171',
+					700: '#b91c1c',
+					900: '#7f1d1d'
 				}
 			},
 			typography: {

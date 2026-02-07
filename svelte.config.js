@@ -17,6 +17,9 @@ const config = {
 			assets: 'build',
 			fallback: 'index.html'
 		}),
+		alias: {
+			'$lib/design-system': './packages/design-system-svelte/src/components'
+		},
 		// poll for new version name every 60 seconds (to trigger reload mechanic in +layout.svelte)
 		version: {
 			name: (() => {
